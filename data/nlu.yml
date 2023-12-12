@@ -1,0 +1,147 @@
+version: "3.1"
+
+# 사용자의 의도를 파악하기 위한 문장 제공
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - hi
+    - Hello
+    - hello
+    - Nice to meet you
+    - Long time no see
+    - Good to see you
+    - good morning
+    - good evening
+    - good afternoon
+
+- intent: deny
+  examples: |
+    - No
+    - Bad
+    - never
+    - not good
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - Tell me another food
+    - I don't like the food you recommended
+
+- intent: provide_ingredient
+  examples: |
+    - [chicken](ingredient_info)
+    - [mushroom](ingredient_info)
+    - [milk](ingredient_info)
+    - [beef](ingredient_info)
+    - [rice](ingredient_info)
+    - [tuna](ingredient_info)
+    - [tofu](ingredient_info)
+    - [vegetable](ingredient_info)
+    - [shrimp](ingredient_info)
+    - [spinach](ingredient_info)
+    - [noodle](ingredient_info)
+    - [mozzarella](ingredient_info)
+    - [broccoli](ingredient_info)
+    - [kimchi](ingredient_info)
+    - [bread](ingredient_info)
+    - [bean](ingredient_info)
+    - [cheese](ingredient_info)
+    - [meal](ingredient_info)
+    - [egg](ingredient_info)
+    - [flour](ingredient_info)
+    - [pork](ingredient_info)
+    - [sausage](ingredient_info)
+    - [ham](ingredient_info)
+    - What should I make with [chicken](ingredient_info)?
+    - a cooking recipe containing [potato](ingredient_info)
+    - Tell me the dish that includes [noodle](ingredient_info)
+    - Tell me what I can make with [tomato](ingredient_info)
+    - I'd like some cooking ideas along with [chocolate](ingredient_info).
+    - Could you share food with the necessary [fish](ingredient_info)?
+    - Share dishes with their respective [egg](ingredient_info) for me, please
+    - I'm looking for some dish, and it would be great if you could include the [beef](ingredient_info) in your suggestions.
+
+- intent: provide_kcal
+  examples: |
+    - [high](kcal_info)
+    - [High](kcal_info)
+    - [Low](kcal_info)
+    - [low](kcal_info)
+
+- intent: provide_time
+  examples: |
+    - [45](time_info) minutes
+    - [100](time_info)
+    - I only have [30](time_info) minutes
+    - No, it takes too long to cook.
+    - No, i don't have enough time to cook.
+    - I want a short cooking time
+    - Tell me what I can do in [10](time_info) minutes
+
+- intent: provide_origin
+  examples: |
+    - [Korean](origin_info)
+    - [korean](origin_info)
+    - [Japanese](origin_info)
+    - [japanese](origin_info)
+    - [Chinese](origin_info)
+    - [chinese](origin_info)
+    - [Western](origin_info)
+    - [western](origin_info)
+
+- intent: provide_allergy
+  examples: |
+    - [Dairy](allergy_info) allergy
+    - [Wheat](allergy_info) allergy
+    - [Soy](allergy_info) allergy
+    - [Seafood](allergy_info) allergy
+    - [None](allergy_info)
+    - No, I'm allergic to [Shellfish](allergy_info) allergy in [almond cakes](recommend_food).
+    - No, I'm allergic to [Wheat](allergy_info) allergy in [French Onion Soup](recommend_food).
+    - I don't have any allergies, so please recommend another food that I can make with that [Dairy](ingredient_info)
+    - Please recommend a food that doesn't have any allergies
+    - I have [Shellfish](allergy_info) allergy.
+    - I have [Soy](allergy_info) allergy.
+
+- intent: food
+  examples: |
+    - [Bibimbap](food_info)
+    - [Okonomiyaki](food_info)
+    - [Japchae](food_info)
+    - [Gyudon](food_info)
+    - [Ramen](food_info)
+    - [Sushi](food_info)
+    - [Pizza](food_info)
+    - [Pancake](food_info)
+    - [Sorbet](food_info)
+    - [Poke](food_info)
+    - [Tarte](food_info)
+    - [Kimbap](food_info)
+    - [Galbi](food_info)
+    - [Jeon](food_info)
+    - [Tteokbokki](food_info)
+    - Tell me the recipe for [Pekingduck](food_info)
+    - Tell me the recipe for [Hotpot](food_info)
+    - recipe for [Dimsum](food_info)
+    - recipe for [Beansprouts](food_info)
+    - recipe for [Wontonmeon](food_info)
+    - Please explain the [first](food_info) dish
+    - Explain the [second](food_info) dish
+    - [first](food_info)
+    - [second](food_info)
+    - [third](food_info)
+
+- intent: goodbye
+  examples: |
+    - thank you
+    - goodbye
+    - ok
+    - ok, thank you
+    - see you later
+    - good night
+    - bye
+    - thank you, see you later
+    - see you later
+    - bye bye
+    - see you later

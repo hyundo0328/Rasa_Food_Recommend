@@ -1,0 +1,74 @@
+version: "3.1"
+
+stories:
+# 대화 시작 -> 인사하기
+- story: user input greet
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+# 식재료 입력
+- story: user input ingredient
+  steps:
+    - intent: provide_ingredient
+      entities:
+        - ingredient_info: chicken
+    - action: action_save_slot_ingredient
+
+# 칼로리 입력
+- story: user input kcal
+  steps:
+    - intent: provide_kcal
+      entities:
+        - kcal_info: high
+    - action: action_first_recommend_food
+    - intent: deny
+    - action: utter_kcal_deny
+
+# 조리시간 입력
+- story: user input time
+  steps:
+    - intent: provide_time
+      entities:
+        - time_info: 30
+    - action: action_second_recommend_food
+    - intent: deny
+    - action: utter_time_deny
+
+# 해당 나라의 음식 입력
+- story: user input origin
+  steps:
+    - intent: provide_origin
+      entities:
+        - origin_info: korean
+    - action: action_third_recommend_food
+    - intent: deny
+    - action: utter_origin_deny
+
+# 알러지 입력
+- story: user input allergy
+  steps:
+    - intent: provide_allergy
+      entities:
+        - allergy_info: wheat
+    - action: action_fourth_recommend_food
+    - intent: deny
+    - action: utter_nothing
+      
+# 마무리 인사 입력
+- story: user input goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+# 음식 레시피 검색
+- story: user input food name
+  steps:
+    - intent: food
+      entities:
+        - food_info: Bibimbap
+    - action: action_desc_recipe
+
+# rasa data validate
+# rasa train --fixed-model-name contact_bot
+# rasa run actions -p 5002
